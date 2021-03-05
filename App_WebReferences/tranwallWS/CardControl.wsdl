@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CustomerOnboarding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerOnboardingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOnboardingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccParLegacy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccParLegacyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccParLegacyResult" type="tns:AccountParameters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountParameters">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumberHash" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumberLookup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumberTruncated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountProfileId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountProfileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActiveExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNotPresentMerchantBlockProfileId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNotPresentMerchantBlockProfileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNotPresentTransactionLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentMerchantBlockProfileId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentMerchantBlockProfileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentTransactionLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CashTransactionLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChipCapable" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DailyLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultMsisdn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultMsisdnGatewayType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeProfileId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeProfileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Limit1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Limit2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Limit3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MonthlyLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OldExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PinCapable" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RepositoryId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Resultcode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAccPermLegacy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccPermLegacyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccPermLegacyResult" type="tns:AccountPermissions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountPermissions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CardNotPresentOnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNotPresentStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNotPresentTransactionLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentAllowAnyForeign" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentAllowBelow" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentAllowBelowLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentAllowForeignEnd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentAllowForeignStart" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentAllowSpecificForeign" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentAllowSpecificForeignCountries" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentOnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPresentTransactionLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CashOnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CashStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CashTransactionLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DailyCounter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DailyLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DailyLimitIntervalEnd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EcomOnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EcomStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FallbackOnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FallbackStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Function1OnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Function1Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Function2OnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Function2Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Function3OnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MasterOnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MasterStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MonthlyCounter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MonthlyLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MonthlyLimitIntervalEnd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotoOnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotoStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurchaseOnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurchaseStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecurringOnUntil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecurringStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Counter1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Counter2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Counter3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Counter1IntervalEnd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Counter2IntervalEnd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Counter3IntervalEnd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Permission1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Permission2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Permission3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Permission4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Permission5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Function3Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EnableCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countries" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableCountryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableCountryTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countries" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="st" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="en" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableCountryTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableCountryTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countries" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableCountryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableChannel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="channel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableChannelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableChannelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannelOneOff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="channel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannelOneOffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableChannelOneOffResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="channel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableChannelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannelTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="channel" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannelTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableChannelTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnabledCountries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnabledCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnabledCountriesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnabledChannels">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnabledChannelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnabledChannelsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CustomerOnboardingSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerOnboarding" />
+  </wsdl:message>
+  <wsdl:message name="CustomerOnboardingSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerOnboardingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccParLegacySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccParLegacy" />
+  </wsdl:message>
+  <wsdl:message name="GetAccParLegacySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccParLegacyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccPermLegacySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccPermLegacy" />
+  </wsdl:message>
+  <wsdl:message name="GetAccPermLegacySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccPermLegacyResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:EnableCountry" />
+  </wsdl:message>
+  <wsdl:message name="EnableCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:EnableCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableCountryTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableCountryTime" />
+  </wsdl:message>
+  <wsdl:message name="EnableCountryTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableCountryTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:DisableCountry" />
+  </wsdl:message>
+  <wsdl:message name="DisableCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:DisableCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableChannelSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableChannel" />
+  </wsdl:message>
+  <wsdl:message name="DisableChannelSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelOneOffSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableChannelOneOff" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelOneOffSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableChannelOneOffResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableChannel" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableChannelTime" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableChannelTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnabledCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnabledCountries" />
+  </wsdl:message>
+  <wsdl:message name="GetEnabledCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnabledCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnabledChannelsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnabledChannels" />
+  </wsdl:message>
+  <wsdl:message name="GetEnabledChannelsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnabledChannelsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CardControlSoap">
+    <wsdl:operation name="CustomerOnboarding">
+      <wsdl:input message="tns:CustomerOnboardingSoapIn" />
+      <wsdl:output message="tns:CustomerOnboardingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccParLegacy">
+      <wsdl:input message="tns:GetAccParLegacySoapIn" />
+      <wsdl:output message="tns:GetAccParLegacySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccPermLegacy">
+      <wsdl:input message="tns:GetAccPermLegacySoapIn" />
+      <wsdl:output message="tns:GetAccPermLegacySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableCountry">
+      <wsdl:input message="tns:EnableCountrySoapIn" />
+      <wsdl:output message="tns:EnableCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableCountryTime">
+      <wsdl:input message="tns:EnableCountryTimeSoapIn" />
+      <wsdl:output message="tns:EnableCountryTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableCountry">
+      <wsdl:input message="tns:DisableCountrySoapIn" />
+      <wsdl:output message="tns:DisableCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannel">
+      <wsdl:input message="tns:DisableChannelSoapIn" />
+      <wsdl:output message="tns:DisableChannelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelOneOff">
+      <wsdl:input message="tns:EnableChannelOneOffSoapIn" />
+      <wsdl:output message="tns:EnableChannelOneOffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannel">
+      <wsdl:input message="tns:EnableChannelSoapIn" />
+      <wsdl:output message="tns:EnableChannelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelTime">
+      <wsdl:input message="tns:EnableChannelTimeSoapIn" />
+      <wsdl:output message="tns:EnableChannelTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledCountries">
+      <wsdl:input message="tns:GetEnabledCountriesSoapIn" />
+      <wsdl:output message="tns:GetEnabledCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledChannels">
+      <wsdl:input message="tns:GetEnabledChannelsSoapIn" />
+      <wsdl:output message="tns:GetEnabledChannelsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CardControlSoap" type="tns:CardControlSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CustomerOnboarding">
+      <soap:operation soapAction="http://tempuri.org/CustomerOnboarding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccParLegacy">
+      <soap:operation soapAction="http://tempuri.org/GetAccParLegacy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccPermLegacy">
+      <soap:operation soapAction="http://tempuri.org/GetAccPermLegacy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableCountry">
+      <soap:operation soapAction="http://tempuri.org/EnableCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableCountryTime">
+      <soap:operation soapAction="http://tempuri.org/EnableCountryTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableCountry">
+      <soap:operation soapAction="http://tempuri.org/DisableCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannel">
+      <soap:operation soapAction="http://tempuri.org/DisableChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelOneOff">
+      <soap:operation soapAction="http://tempuri.org/EnableChannelOneOff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannel">
+      <soap:operation soapAction="http://tempuri.org/EnableChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelTime">
+      <soap:operation soapAction="http://tempuri.org/EnableChannelTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledCountries">
+      <soap:operation soapAction="http://tempuri.org/GetEnabledCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledChannels">
+      <soap:operation soapAction="http://tempuri.org/GetEnabledChannels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CardControlSoap12" type="tns:CardControlSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CustomerOnboarding">
+      <soap12:operation soapAction="http://tempuri.org/CustomerOnboarding" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccParLegacy">
+      <soap12:operation soapAction="http://tempuri.org/GetAccParLegacy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccPermLegacy">
+      <soap12:operation soapAction="http://tempuri.org/GetAccPermLegacy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableCountry">
+      <soap12:operation soapAction="http://tempuri.org/EnableCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableCountryTime">
+      <soap12:operation soapAction="http://tempuri.org/EnableCountryTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableCountry">
+      <soap12:operation soapAction="http://tempuri.org/DisableCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannel">
+      <soap12:operation soapAction="http://tempuri.org/DisableChannel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelOneOff">
+      <soap12:operation soapAction="http://tempuri.org/EnableChannelOneOff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannel">
+      <soap12:operation soapAction="http://tempuri.org/EnableChannel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelTime">
+      <soap12:operation soapAction="http://tempuri.org/EnableChannelTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledCountries">
+      <soap12:operation soapAction="http://tempuri.org/GetEnabledCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledChannels">
+      <soap12:operation soapAction="http://tempuri.org/GetEnabledChannels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CardControl">
+    <wsdl:port name="CardControlSoap" binding="tns:CardControlSoap">
+      <soap:address location="http://10.0.41.166/Tranwall/CardControl.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CardControlSoap12" binding="tns:CardControlSoap12">
+      <soap12:address location="http://10.0.41.166/Tranwall/CardControl.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

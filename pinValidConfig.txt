@@ -1,0 +1,28 @@
+<appSettings>
+    <add key="ClientPort" value="1900" />
+    <add key="CardDB" value="Server=10.0.41.239;database=postcard;Persist Security Info=True;User ID=carduser;password=($t*rl1ng132)"/>
+    <add key="HsmHost" value="172.25.31.18"/>
+    <add key="HsmPort" value="9990"/>
+    <add key="HsmHeaderLength" value="8"/>
+    <add key="DecimalisationTable" value="0123456789012345"/>
+    <add key="PVKI" value="6F37F9A825B79731"/>
+    <add key="PINLength" value="5"/>
+    <add key="MinPINLength" value="04"/>
+  </appSettings>
+  
+  
+  
+  C:\pinValidation.log
+  <appSettings>
+    <add key="ClientPort" value="1900" />
+    <add key="CardDB" value="Postcard Connection String"/>
+    <add key="HsmHost" value="HSM IP"/>
+    <add key="HsmPort" value="HSM Port"/>
+    <add key="HsmHeaderLength" value="HSM Header Length"/>
+    <add key="DecimalisationTable" value="HSM Decimalization Table"/>
+    <add key="PVKI" value="Card PVKI key"/>
+    <add key="PINLength" value="HSM Pin Length"/>
+    <add key="MinPINLength" value="HSM Minimum PIN Length"/>
+  </appSettings>
+  
+  #ValPin1234$
